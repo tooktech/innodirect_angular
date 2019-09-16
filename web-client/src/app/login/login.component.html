@@ -1,0 +1,21 @@
+<div style="text-align:center">
+<h1>Log in</h1>
+<div class="signin-content">
+<form [formGroup]="form"(ngSubmit)="onSubmit()">
+  <p>Please login to continue</p>
+
+  <input placeholder="User" formControlName="userName" required>
+  <div *ngIf="isFieldInvalid('userName')">
+    Please inform your user name
+  </div>
+
+  <input type="password" placeholder="Password" formControlName="password" required>
+  <div *ngIf="isFieldInvalid('userName')">
+    Please inform your password
+  </div>
+
+  <button raised-button color="primary">Login</button>
+
+</form>
+</div>
+</div>
