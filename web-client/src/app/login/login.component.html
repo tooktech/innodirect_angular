@@ -1,20 +1,37 @@
 <div style="text-align:center">
 <h1>Log in</h1>
 <div class="signin-content">
-<form [formGroup]="form"(ngSubmit)="onSubmit()">
+<form [formGroup]="form" novalidate>
   <p>Please login to continue</p>
 
+  <div>
+  <span>
   <input placeholder="User" formControlName="userName" required>
-  <div *ngIf="isFieldInvalid('userName')">
+    <!--<input [innerHTML]="username"></span>-->
+    <p>please enter your valid user</p>
+  </span>
+ </div>
+
+  <div *ngIf="doLogin()">
     Please inform your user name
   </div>
 
-  <input type="password" placeholder="Password" formControlName="password" required>
-  <div *ngIf="isFieldInvalid('userName')">
-    Please inform your password
+  <div>
+    <span>
+    <input type="password" placeholder="Password" formControlName="password" required>
+      <!--<input [innerHTML]="password"></span>-->
+      <p>please enter your valid password</p>
+    </span>
   </div>
 
-  <button raised-button color="primary">Login</button>
+  <div *ngIf="doLogin()">
+    Please inform your user name
+  </div>
+
+  <button (click)="doLogin()" raised-button color="primary">Login</button>
+  <nav>
+    <a routerLink="/forgot-password"><br>Forgot your pass?</a>
+  </nav>
 
 </form>
 </div>
