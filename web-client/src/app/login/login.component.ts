@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import {StringUtils} from '../helpers/string-utils';
-
+import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule }    from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -24,7 +25,7 @@ export class LoginComponent implements OnInit {
 
   initForm() {
     this.form = this.fb.group({
-      userName: ['', Validators.required],
+      userName: ['',  Validators.required],
       password: ['', Validators.required]
     });
   }
@@ -37,15 +38,13 @@ export class LoginComponent implements OnInit {
   }
 
   doLogin() {
-       debugger;
-
-       if (StringUtils.isStringNonEmpty(this.username) || StringUtils.isStringNonEmpty(this.password)) {
-      this.isInvalid = false;
-      this.validationMessage = 'Please insert something!';
-    } else {
+  debugger;
+    if (this.form.valid) {
       if (this.username === 'abc' && this.password === 'abc') {
+        document.getElementById("demo").innerHTML = "";
         this.router.navigate(['/dashboard']);
       } else {
+        document.getElementById("demo").innerHTML = "Invalid user or password. Try again !";
         this.isInvalid = true;
         this.validationMessage = 'Invalid login !';
       }

@@ -1,38 +1,32 @@
 <div style="text-align:center">
-<h1>Log in</h1>
-<div class="signin-content">
-<form [formGroup]="form" novalidate>
-  <p>Please login to continue</p>
+  <h1>Log in</h1>
 
-  <div>
-  <span>
-  <input placeholder="User" formControlName="userName" required>
-    <!--<input [innerHTML]="username"></span>-->
-    <p>please enter your valid user</p>
-  </span>
- </div>
+  <div class="container">
+    <form [formGroup]="form">
 
-  <div *ngIf="doLogin()">
-    Please inform your user name
+      <div class="form-group">
+        <label for="username">Name</label>
+        <input formControlName="userName" [(ngModel)]="username" id="username" name="username" class="form-control" placeholder="User Name"/>
+        <label *ngIf="form.get('userName').invalid" class="error"> Username is required. </label>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input formControlName="password" [(ngModel)]="password" type="password" id="password" name="password"
+               class="form-control" placeholder="Password"/>
+        <label *ngIf="form.get('password').invalid" class="error"> Password is required. </label>
+      </div>
+
+      <button (click)="doLogin()" class="btn btn-primary">Login</button>
+
+      <p id="demo"></p>
+       <nav>
+        <a routerLink="/forgot-password"><br>Forgot your password?</a>
+      </nav>
+
+
+    </form>
   </div>
-
-  <div>
-    <span>
-    <input type="password" placeholder="Password" formControlName="password" required>
-      <!--<input [innerHTML]="password"></span>-->
-      <p>please enter your valid password</p>
-    </span>
-  </div>
-
-  <div *ngIf="doLogin()">
-    Please inform your user name
-  </div>
-
-  <button (click)="doLogin()" raised-button color="primary">Login</button>
-  <nav>
-    <a routerLink="/forgot-password"><br>Forgot your pass?</a>
-  </nav>
-
-</form>
 </div>
-</div>
+
+
