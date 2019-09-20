@@ -1,6 +1,21 @@
 a {
   color: hotpink;
 }
+
+.content{
+  border-bottom-style: solid;
+  border-bottom-width: thin;
+
+}
+div.b {
+  position: absolute;
+  right: 0;
+  width: 100px;
+  height:30px;
+  top: 0;
+  font-weight: bold;
+}
+
 /* unvisited link */
 a:link {
   color: red;
@@ -15,19 +30,13 @@ a:visited {
 /* mouse over link */
 a:hover {
   color: hotpink;
+  font-weight:900;
+  text-decoration:underline;
 }
 
 /* selected link */
 a:active {
   color: blue;
-}
-
-a:link {
-  background-color: yellow;
-}
-
-a:visited {
-  background-color: cyan;
 }
 
 a:hover {
