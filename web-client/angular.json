@@ -21,10 +21,19 @@
             "aot": false,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets/Image/innodirect.png",
+			        "src/assets/Image/InnoDirect_1500x200Transparent.png",
+              "src/assets/Image/Language.svg",
+              "src/assets/Image/Menu.svg",
+              "src/assets/theme.css",
+              "src/assets/styles.min.css"
+
+
+
             ],
             "styles": [
               "src/styles.css"
+
             ],
             "scripts": []
           },

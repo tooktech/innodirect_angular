@@ -1,0 +1,28 @@
+#overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  z-index: 10000;
+}
+
+.effect
+{
+  filter: alpha(opacity=60);
+  -moz-opacity: 0.6;
+  -khtml-opacity: 0.6;
+  opacity: 0.6;
+}
+
+#img-load
+{
+  position: absolute;
+}
+
+#modal-spinner{
+  display: none;
+  text-align:center;
+}
+
+.note-editor, .note-frame card {
+  text-align: left !important;
+}
