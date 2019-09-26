@@ -26,7 +26,11 @@
               "src/assets/Image/Language.svg",
               "src/assets/Image/Menu.svg",
               "src/assets/theme.css",
-              "src/assets/styles.min.css"
+              "src/assets/styles.min.css",
+              "src/assets/custom.css",
+              "src/assets/admin_css_min/toastr.min.css",
+              "src/assets/select2/select2-bootstrap4.min.css"
+
 
 
 
