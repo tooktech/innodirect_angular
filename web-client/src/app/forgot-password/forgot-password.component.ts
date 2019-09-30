@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import {FormGroup, FormBuilder, Validators, FormControl} from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -26,16 +26,17 @@ export class ForgotPasswordComponent implements OnInit {
     this.validationMessage = '';
     this.isInvalid = false;
     this.initForm();
+
   }
 
   doNext() {
   debugger;
     if (this.form.valid) {
       if (this.email === 'abc@gmail.com') {
-        document.getElementById("demo").innerHTML = "";
+        document.getElementById('demo').innerHTML = '';
         this.router.navigate(['/login']);
       } else {
-        document.getElementById("demo").innerHTML = "Please write a proper email that is already registered";
+        document.getElementById('demo').innerHTML = 'Please write a proper email that is already registered';
         this.isInvalid = true;
         this.validationMessage = 'Invalid login !';
       }
